@@ -6,6 +6,9 @@
 .SH "NAME"
 \fBstash\fR \- UNIX File Stasher
 .
+.SH "NAME"
+stash \-\- store unused files in a configurable location
+.
 .SH "SYNOPSIS"
 \fBstash\fR [\-\-message MSG] [\-\-stash PATH] FILES
 .
