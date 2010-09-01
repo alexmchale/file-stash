@@ -4,6 +4,8 @@ require "time"
 require "fileutils"
 require "optparse"
 
+### Parse command line options ###
+
 OptionParser.new do |opts|
 
   opts.banner = "Usage: stash [options] <files>"
@@ -22,6 +24,17 @@ OptionParser.new do |opts|
   end
 
 end.parse!
+
+### Validate all specified files ###
+
+rejected_files = ARGV.find_all { |filename| !File.exists? filename }
+if rejected_files.count > 0
+  rejected_files.each { |filename| puts "cannot find file: #{filename}" }
+  puts "stash not performed"
+  exit
+end
+
+### Perform the stash ###
 
 STASH_PATH = File.expand_path(ENV["STASH_PATH"] || "~/.stash")
 NODE_NOTE  = ENV["STASH_MSG"] ? " (#{ENV["STASH_MSG"]})" : ""
