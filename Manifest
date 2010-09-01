@@ -1,4 +1,5 @@
 Manifest
+README.markdown
 Rakefile
 bin/stash
 lib/stash.rb

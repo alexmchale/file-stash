@@ -19,3 +19,7 @@ folder based upon the current time within the stash.
 You may specify an optional message with the `-m` or `--message` parameter.
 
     stash -m "Old css for TwitterClone" public/stylesheets/*.css cache/*.css
+
+Those files would then be relocated to a folder named something like:
+
+    /home/alexmchale/.stash/2010-09-01T19:35:01+00:00-old.css.for.twitterclone

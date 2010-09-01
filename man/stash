@@ -13,4 +13,31 @@ stash \-\- store unused files in a configurable location
 \fBstash\fR [\-\-message MSG] [\-\-stash PATH] FILES
 .
 .SH "DESCRIPTION"
+Stash gets rid of files you are no longer interested in\. Pass it a list of files and it will move them to the path specified by the \fBSTASH_PATH\fR environment variable, or \fB~/\.stash\fR by default\. It places the files listed in a folder based upon the current time within the stash\.
+.
+.P
+You may specify an optional message with the \fB\-m\fR or \fB\-\-message\fR parameter\.
+.
+.IP "" 4
+.
+.nf
+
+stash \-m "Old css for TwitterClone" public/stylesheets/*\.css cache/*\.css
+.
+.fi
+.
+.IP "" 0
+.
+.P
+Those files would then be relocated to a folder named something like:
+.
+.IP "" 4
+.
+.nf
+
+/home/alexmchale/\.stash/2010\-09\-01T19:35:01+00:00\-old\.css\.for\.twitterclone
+.
+.fi
+.
+.IP "" 0
 

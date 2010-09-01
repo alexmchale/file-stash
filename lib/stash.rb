@@ -25,8 +25,9 @@ class Stash
   def stash(files, options = {})
     validate files
 
-    node_note  = options[:message] ? " (#{options[:message]})" : ""
-    node_name  = Time.now.iso8601 + node_note
+    message    = options[:message].to_s.gsub(/\s/, ".").downcase.gsub(/[^a-z0-9\.]/, "")
+    node_note  = "-#{message}" unless message.empty?
+    node_name  = Time.now.iso8601 + node_note.to_s
     node_path  = File.join(@path, node_name)
 
     FileUtils.mkdir_p node_path
