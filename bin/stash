@@ -2,9 +2,31 @@
 
 require "time"
 require "fileutils"
+require "optparse"
+
+OptionParser.new do |opts|
+
+  opts.banner = "Usage: stash [options] <files>"
+
+  opts.on("-m", "--message MSG", String, "Note to attach to this stash") do |msg|
+    ENV["STASH_MSG"] = msg
+  end
+
+  opts.on("-s", "--stash STASH", String, "Path to the stash to use [defaults to STASH_PATH or ~/.stash]") do |stash|
+    ENV["STASH_PATH"] = stash
+  end
+
+  opts.on_tail("-h", "--help", "Show this message") do
+    puts opts
+    exit
+  end
+
+end.parse!
 
 STASH_PATH = File.expand_path(ENV["STASH_PATH"] || "~/.stash")
-NODE_PATH  = File.join(STASH_PATH, Time.now.iso8601)
+NODE_NOTE  = ENV["STASH_MSG"] ? " (#{ENV["STASH_MSG"]})" : ""
+NODE_NAME  = Time.now.iso8601 + NODE_NOTE
+NODE_PATH  = File.join(STASH_PATH, NODE_NAME)
 
 FileUtils.mkdir_p NODE_PATH
 
