@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require "time"
+require "fileutils"
+
+STASH_PATH = File.expand_path(ENV["STASH_PATH"] || "~/.stash")
+NODE_PATH  = File.join(STASH_PATH, Time.now.iso8601)
+
+FileUtils.mkdir_p NODE_PATH
+
+ARGV.each do |src|
+  dst = File.join(NODE_PATH, File.basename(src))
+  FileUtils.mv src, dst
+end
