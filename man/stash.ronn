@@ -1,0 +1,8 @@
+stash(1) -- UNIX File Stasher
+=============================
+
+## SYNOPSIS
+
+`stash` [--message MSG] [--stash PATH] FILES
+
+## DESCRIPTION

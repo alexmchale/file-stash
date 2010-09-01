@@ -1,0 +1,12 @@
+STASH(1)							      STASH(1)
+
+
+
+NAME
+       stash - UNIX File Stasher
+
+SYNOPSIS
+       stash [--message MSG] [--stash PATH] FILES
+
+DESCRIPTION
+				September 2010			      STASH(1)

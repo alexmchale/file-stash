@@ -1,0 +1,13 @@
+.\" generated with Ronn/v0.7.3
+.\" http://github.com/rtomayko/ronn/tree/0.7.3
+.
+.TH "STASH" "1" "September 2010" "" ""
+.
+.SH "NAME"
+\fBstash\fR \- UNIX File Stasher
+.
+.SH "SYNOPSIS"
+\fBstash\fR [\-\-message MSG] [\-\-stash PATH] FILES
+.
+.SH "DESCRIPTION"
+
