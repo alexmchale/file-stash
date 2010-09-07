@@ -7,7 +7,11 @@ stash -- store unused files in a configurable location
 
 ## SYNOPSIS
 
-`stash` [--message MSG] [--stash PATH] FILES
+    stash [--message MSG] [--stash PATH] FILES
+
+## INSTALLATION
+
+    gem install file-stash
 
 ## DESCRIPTION
 
