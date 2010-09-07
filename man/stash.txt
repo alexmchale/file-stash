@@ -11,6 +11,9 @@ NAME
 SYNOPSIS
        stash [--message MSG] [--stash PATH] FILES
 
+INSTALLATION
+       gem install file-stash
+
 DESCRIPTION
        Stash gets rid of files you are no longer interested in. Pass it a list
        of files and it will move them to the path specified by the  STASH_PATH

@@ -10,7 +10,20 @@
 stash \-\- store unused files in a configurable location
 .
 .SH "SYNOPSIS"
-\fBstash\fR [\-\-message MSG] [\-\-stash PATH] FILES
+.
+.nf
+
+stash [\-\-message MSG] [\-\-stash PATH] FILES
+.
+.fi
+.
+.SH "INSTALLATION"
+.
+.nf
+
+gem install file\-stash
+.
+.fi
 .
 .SH "DESCRIPTION"
 Stash gets rid of files you are no longer interested in\. Pass it a list of files and it will move them to the path specified by the \fBSTASH_PATH\fR environment variable, or \fB~/\.stash\fR by default\. It places the files listed in a folder based upon the current time within the stash\.
